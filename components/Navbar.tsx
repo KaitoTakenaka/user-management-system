@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import React from "react";
+import Link from "next/link";
+import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 
 const Navbar: React.FC = () => {
   return (
@@ -14,10 +14,13 @@ const Navbar: React.FC = () => {
         </Button>
         <Button color="inherit" component={Link} href="/users">
           ユーザー一覧
+          <Button color="inherit" component={Link} href="/register">
+            ユーザー新規登録
+          </Button>
         </Button>
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 export default Navbar;

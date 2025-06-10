@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { TextField, Button, Box, Typography, Alert } from "@mui/material";
+import { TextField, Button, Box, Typography} from "@mui/material";
 import { createUser } from "../utils/api";
 
 // 必要に応じて利用する
@@ -22,7 +22,6 @@ const RegisterForm: React.FC<RegisterFormProps> = ({onSuccess}) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<RegisterFormInputs>();
 
   
