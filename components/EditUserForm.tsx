@@ -62,21 +62,18 @@ const EditUserForm: React.FC<EditUserFormProps> = ({ userId, onSuccess }) => {
       {/*3.*/}
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
-          label="名前"
           fullWidth
           margin="normal"
           {...register("name")}
         />
 
         <TextField
-          label="メールアドレス"
           fullWidth
           margin="normal"
           {...register("email")}
         />
 
         <TextField
-          label="役割"
           fullWidth
           margin="normal"
           {...register("role")}
