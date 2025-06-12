@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { fetchUsers } from "../../utils/api";
 import { User } from "../../types/User";
 import { Typography, CircularProgress, Alert, Box } from "@mui/material";
-import UserList from "../../components/UserList";//1.UserListのimport
+import UserList from "../../components/UserList"; //1.UserListのimport
 
 const UsersPage: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
