@@ -9,9 +9,11 @@ const meta: Meta<typeof CustomButton> = {
   tags: ["autodocs"],
 };
 
-// TODO: メタデータのエクスポート
+//1.メタデータのエクスポート
+export default meta;
 
-// TODO: ストーリーの定義
+// 2.ストーリーの定義
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
@@ -20,4 +22,18 @@ export const Primary: Story = {
   },
 };
 
-// TODO: 上記サンプルを参考に[Secondary][Danger]を設定する
+//3.Secondary
+export const Secondary: Story = {
+  args: {
+    variantType: "secondary",
+    children: "Secondary Button",
+  },
+};
+
+//3.danger
+export const Danger: Story = {
+  args: {
+    variantType: "danger",
+    children: "Danger Button",
+  },
+};
