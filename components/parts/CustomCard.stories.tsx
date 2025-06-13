@@ -4,8 +4,15 @@ import type { Meta, StoryObj } from "@storybook/react";
 import CustomCard from "../../components/parts/CustomCard";
 import CustomButton from "../../components/parts/CustomButton";
 
-// TODO: メタデータ
-// TODO: ストーリーの定義
+// メタデータの定義
+const meta: Meta<typeof CustomCard> = {
+  title: "Parts/CustomCard", // Storybook上での表示カテゴリ
+  component: CustomCard, // 対象のコンポーネント
+  tags: ["autodocs"], // ドキュメント自動生成のためのタグ
+};
+export default meta;
+//  ストーリーの定義
+type Story = StoryObj<typeof CustomCard>;
 
 export const Default: Story = {
   args: {
