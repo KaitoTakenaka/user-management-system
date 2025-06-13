@@ -6,7 +6,7 @@ import { Card, CardContent, Typography, CardActions } from "@mui/material";
 // インターフェースにtitleとdescriptionを追加
 interface CustomCardProps {
   title: string;
-  description: string;
+  description: React.ReactNode;
   actions?: React.ReactNode;
 }
 
