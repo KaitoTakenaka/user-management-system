@@ -8,7 +8,9 @@ import {
 } from "@mui/material";
 import { User } from "../types/User";
 import Link from "next/link";
-import DeleteUserButton from "./DeleteUserButton"; //DeleteUserButtonimport
+//DeleteUserButtonの削除とCustomButtonのインポート
+import CustomButton from "./parts/CustomButton";
+import { softDeleteUser } from "../utils/api";
 
 interface UserCardProps {
   user: User;
@@ -16,6 +18,16 @@ interface UserCardProps {
 }
 
 const UserCard: React.FC<UserCardProps> = ({ user, onDelete }) => {
+  const handleDelete = async () => {
+    if (confirm("本当にこのユーザーを削除しますか？")) {
+      try {
+        await softDeleteUser(user.id);
+        onDelete(user.id);
+      } catch (error) {
+        console.error("削除に失敗しました:", error);
+      }
+    }
+  };
   return (
     <Card sx={{ minWidth: 275, mb: 2 }}>
       <CardContent>
@@ -38,10 +50,9 @@ const UserCard: React.FC<UserCardProps> = ({ user, onDelete }) => {
           編集
         </Button>
         {/* ボタンの修正*/}
-        <DeleteUserButton
-          userId={user.id} //削除するユーザーのID
-          onDelete={() => onDelete(user.id)} // UserListコンポーネントに削除完了を伝える
-        />
+        <CustomButton size="small" variantType="danger" onClick={handleDelete}>
+          削除
+        </CustomButton>
       </CardActions>
     </Card>
   );
