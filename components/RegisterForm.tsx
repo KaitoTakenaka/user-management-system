@@ -59,7 +59,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({onSuccess}) => {
         />
 
         <TextField
-          label="役職"
+          label="役割"
           fullWidth
           margin="normal"
             {...register("role", { required: true })}

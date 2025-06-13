@@ -10,16 +10,16 @@ export interface UserListProps {
 
 // 関数コンポーネントの定義
 const UserList: React.FC<UserListProps> = ({ users }) => {
-  const [userList, setUserList] = useState<User[]>(users);//2-3-a:useStateでusersを保持
+  const [userList, setUserList] = useState<User[]>(users);//useStateでusersを保持
 
-  //  2-3-4-a.filter処理で削除されたユーザーを除外して再描画
+  //  filter処理で削除されたユーザーを除外して再描画
   const handleDelete = (deletedUserId: number) => {
     setUserList((prevUsers) =>
       prevUsers.filter((user) => user.id !== deletedUserId)
     );
   };
   return (
-    //2-3-4-b.受け取ったusersをmap処理でループし、UserCardを呼び出す
+    //受け取ったusersをmap処理でループし、UserCardを呼び出す
     <Box>
       {userList.map((user) => (
         <UserCard key={user.id} user={user} onDelete={handleDelete}/>
